@@ -220,7 +220,7 @@ data is not going to be analyzed based on the skewness.
 The AQI Skewness will be important, though, even in a single
 dataset, as the AQI Skewness for the small number of columns
 is only -0.07, whereas for the larger amount of variables,
-it comes out to 0.88.Z
+it comes out to 0.88.
 """
 print(f"AQI Skewness: {skew(y_train):.2f}")
 
@@ -454,3 +454,4 @@ for scored_model in all_scores:
         sync_config_with_scores(all_scores[scored_model], config)
 
     
+
