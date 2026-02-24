@@ -3,7 +3,7 @@ Advanced Air Quality Analysis
 
 Made with the help of Google Gemini, this project explores Scikit-Learn Machine Learning using Prompt/AI Engineering.
 
-The project was initialized in early February 2026 as a showcase of more advanced machine learning tools, and it currently includes permutation importance, pipelines, encoders, column transformers, and error analysis, to name some.
+The project was initialized in mid-January 2026 as a showcase of more advanced machine learning tools, and it currently includes permutation importance, pipelines, encoders, column transformers, and error analysis, to name some.
 
 However, the project has been reshaped into an AutoML project, and despite the advanced tools listed, the options are currently limited: there are column-transformed pipelines with the one type of feature engineering involved up to now (permutation importance) and without it. It does not have stronger ML tools yet.
 
