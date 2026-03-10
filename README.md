@@ -16,3 +16,15 @@ One example of conflicting ML decisions:
 
 As the project continues, ML questions such as these will be explored further.
 
+
+# 3/9/2026 Update (Loose Evaluation of Google Gemini/Google Copilot Search and Revealing Unknowns):
+The project is making significant progress, though not without flaw. 
+
+Machine Learning is not inherently supposed to solve for the "unknown". However, because Machine Learning arguably has the most benefit when the information extracted from data is maximized, and for the purpose of advancing our knowledge of Machine Learning, more unknowns may be welcome. In an attempt to maximize its benefits, the project had at first been run trying to avoid receiving knowledge about the dataset from outside sources. The data of course already has algorithms involved in its processes, but they were avoided before Google Gemini offered an equation for AQI based in part on the Arithmetic Mean column. The idea had not particularly affected how the model was assessed, but it was a clear sign that, with data that is already rather expansive in how it is known to be, pushing in the direction of them gives room towards further inspection.
+
+While Google Gemini's accidental discovery forced progress, that equation was still _initially unwanted_. The data is not expected to be calculated with the equation, especially when:
+i. The data is partially biased by certain other variables regardless of the equation out of context.
+ii. Other metrics beyond the AQI as a predicted variable have not been considered yet.
+
+Of course, Google Copilot Search was mentioned. Google Gemini is definitely more reliable for answering questions dynamically, but the Copilot Search has helped as a second source of information when Google Gemini seems to struggle.
+
