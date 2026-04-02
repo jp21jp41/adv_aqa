@@ -28,3 +28,23 @@ ii. Other metrics beyond the AQI as a predicted variable have not been considere
 
 Of course, Google Copilot Search was mentioned. Google Gemini is definitely more reliable for answering questions dynamically, but the Copilot Search has helped as a second source of information when Google Gemini seems to struggle.
 
+# 4/1/2026 Update (Random Forest over Linear Models)
+Google Gemini was able to handle the idea of the different models involved in improving the SMAPE score. The issue of grouping data surfaced, and in order to keep going through with that to improve accuracy, the VIF was analyzed. The main problem seemed to be that some of the larger State variables (which are places such as California and Hawaii) had a lot of variability, while there was still multicollinearity amongst several states. There were many different possible tools (not mutually exclusive, but not necessarily reasonable to combine):
+
+- State AQI Mean
+- PCA Spatial Transformer
+- Random Forest Regressor
+
+The State-based mean was the easier Linear Model Solution, but it likely confounds with both of the other tools, linearly or not. Regardless, the goal was to make another great jump in accuracy after having a strong improvement through the duration correction through adjusting the Sample Duration based on the data (thankfully, it was designed such that duration-based groups could simply be summed together to record a sample duration) combined with imputation.
+
+The Random Forest Regressor improved the SMAPE Score from about 36.5% to about 27%, whereas the other tools didn't make much difference. One other option is changing from OneHot to Target Encoding. Right now, with the State AQI Mean, TargetEncoding _seems_ to be more accurate, but that may change. The Random Forest Regressor should be run separately from the other tools mentioned, but it hasn't yet because the runtime limitations had been increasing, with a more construction-focused headway to be noted.
+
+#########################
+
+A custom path to a separate Scikit-Learn module has been included in the system. The idea is that once the model has reached a certain level of accuracy, the separate Scikit-Learn module would be patched to run faster. While algorithmic efficiency can be better within the Air Quality Analysis module, the system efficiency may not have such an advantage because of the connection that Scikit-Learn has to certain components such as Cython, NumPy, SciPy, BLAS/LAPACK, and Joblib. One would not expect in this current case to be able to unpack everything so readily, but the connection to a separate module at least makes one testing form of Scikit-Learn with a baseline one simpler. Even if some pure algorithms replace certain Scikit-Learn functions, it would likely be more difficult for more extensive functions and much of the improvements might expectantly be from simply removing exogenous functions in these modules.
+
+The custom path was quickly included with the help of Google Gemini. That was not the only improvement. Of course, runtime efficiency is to be observed with a time cache, and that was added with the help of Google Gemini, which was much more concise than making machine learning improvements with it. Google Gemini will direct a developer to where new code has to placed, but moreso when explicitly told to; that much is assumable given that it tends to perform better with immediate ideas (meaning ideas that are typed into more recent prompts). However, Google Gemini is fantastic at giving the user immediate tools that wouldn't be readily available without it. Google Gemini made, to solve the problem of needing run ID's in the cache, a backfill module and then a reordering module, solving a potential whole other undertaking in about 10 minutes, with each module performing their respective tasks instantaneously.
+
+Google Gemini metaphorically offers a developer a guided toolbox for every tool needed, which is a great advantage.
+
+NOTE: The goal is not to dismantle Google Gemini. It is a great, efficient system that has helped me exceptionally through this process.
