@@ -48,3 +48,8 @@ The custom path was quickly included with the help of Google Gemini. That was no
 Google Gemini metaphorically offers a developer a guided toolbox for every tool needed, which is a great advantage.
 
 NOTE: The goal is not to dismantle Google Gemini. It is a great, efficient system that has helped me exceptionally through this process.
+
+# 4/2/2026 Update (Search CV)
+A RandomSearchCV has already been run on the data. Unfortunately, this is where lengthy runtimes really begin to take a toll. The runs with Random Forests were already beginning to slow down to about 20 minutes, but those were still reasonable given a limited number of runs. The RandomSearchCV has only been given 1 proper run, which took over an hour, and given the fact that the new version in the making doesn't support hyperparameters, a time cache entry wasn't recorded at the time.
+This all would imply that runs require sampling of the data set, and of course, it would be the purpose for a custom, vendor-patched machine learning framework. If the framework were fast enough, running the module with the Search CV would be reasonable.
+
