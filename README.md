@@ -53,3 +53,11 @@ NOTE: The goal is not to dismantle Google Gemini. It is a great, efficient syste
 A RandomSearchCV has already been run on the data. Unfortunately, this is where lengthy runtimes really begin to take a toll. The runs with Random Forests were already beginning to slow down to about 20 minutes, but those were still reasonable given a limited number of runs. The RandomSearchCV has only been given 1 proper run, which took over an hour, and given the fact that the new version in the making doesn't support hyperparameters, a time cache entry wasn't recorded at the time.
 This all would imply that runs require sampling of the data set, and of course, it would be the purpose for a custom, vendor-patched machine learning framework. If the framework were fast enough, running the module with the Search CV would be reasonable.
 
+# 4/11/2026 Update (Potential New Metrics/Cache Edits, Hyperparameter Tuning and Considerations for Custom Scikit-Learn Usage)
+Up to now, the SMAPE has mostly been relied on for calculating accuracy. Although, at this time, the potential for using the MAE as well as the Negative Mean Poisson Deviance has been posed by AI. While those different metrics may not be necessary, they are worth considering, and with all of the other fixes, the project is at crossroads with several potential tasks:
+- The New Metrics
+- Making a cache system that properly includes certain metrics, as well as, given the limitations of a large cache, the ability to cut down unnecessary cache data
+- The "Directional Shift" of Hyperparameters (according to Google Gemini)
+- Adding other potential steps to the machine learning model if necessary
+- Designing what may possibly be multiple custom Scikit-Learn packages to meet the different needs of each system, as well as an overencompassing one
+- Potentially, practical cases that extract data that use one or more of the models
